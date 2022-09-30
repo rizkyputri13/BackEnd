@@ -61,7 +61,7 @@ const createNext = async(req,res,next) => {
 const update = async (req, res) => {
     console.log();
     try {
-        if (req.file) {
+        if (req.files) {
             const region = await req.context.models.regions.update({
                 region_name: req.body.region_name,
                 region_photo: req.files.foto ? req.files.foto[0].originalname : null,
